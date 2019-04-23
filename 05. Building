@@ -1,0 +1,22 @@
+function solve(input){
+  let floorsCount = Number(input.shift());
+  let roomsCount = Number(input.shift());
+  let resultString = '';
+
+  for(let floor = floorsCount;floor >=1;floor--){
+    for(let room = 0;room < roomsCount;room++){
+      if(floor == floorsCount){
+        resultString += `L${floor}${room} `
+        }
+      else if(floor % 2 == 0){
+        resultString += `O${floor}${room} `
+      }
+      else if(floor % 2 == 1){
+        resultString += `A${floor}${room} `
+      }
+    }
+    console.log(resultString);
+    resultString = '';
+  }
+}
+solve([6,4])
