@@ -1,0 +1,31 @@
+function solve(input){
+  let n = Number(input.shift());
+  
+
+  for(let index = 1;index <= n; index++){
+    let product = input.shift();
+    let eggs = false;
+    let flour = false;
+    let sugar = false;
+    while(true){
+      if(product == "Bake!"){
+        if(eggs && flour && sugar){
+          console.log(`Baking batch number ${index}...`);
+        break;
+      }else{
+        console.log(`The batter should contain flour, eggs and sugar!`)
+        product = input.shift()
+      }
+    }
+     if(product == "eggs"){
+        eggs = true;
+      }else if(product == "flour"){
+        flour = true;
+      }
+      else if(product == "sugar"){
+        sugar = true;
+      }
+      product = input.shift();
+    }
+  }
+}
