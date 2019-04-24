@@ -1,0 +1,22 @@
+function solve(input){
+  let n = Number(input.shift());
+  let restultString = " ";
+  for(let first = 1;first <= 9;first++){
+    for(let second = 1;second <= 9;second++){
+      for(let third = 1;third <= 9;third++){
+        for(let four = 1;four <= 9;four++){
+          for(let five = 1;five <= 9;five++){
+            for(let six = 1;six <= 9;six++){
+              let product = first * second * third * four * five * six;
+              if(product == n){
+                restultString += `${first}${second}${third}${four}${five}${six} `
+              }  
+            }
+          }
+        }
+      }
+    }
+  }
+  console.log(restultString)
+}
+solve([2]);
